@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories</title>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Righteous|Pacifico|Bungee|Jost|Bree+Serif&display=swap" rel="stylesheet">
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- Icones -->
+    <script src="https://kit.fontawesome.com/af48685b30.js" crossorigin="anonymous"></script>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/stories.css">
+    <link rel="stylesheet" href="css/createStorie.css">
+
+    <!-- CSS Pages -->
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/createStorie.js"></script>
+</head>
+<body onload="changeView('createStorie')">
+    <div class="all">
+        <div class="box-left">
+            <h1>Projeto Stories</h1>
+            <div class="menu">
+                <button onclick="changeView('central')"><i class="fas fa-image"></i></button>
+                <button onclick="changeView('perfil')"><i class="fas fa-id-badge"></i></button>
+                <button onclick="changeView('createStorie')"><i class="fas fa-plus"></i></button>
+                <button onclick="sair()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="myFriends">
+                <div class="friends-box" style="background-color:rgb(182, 60, 60);" onclick="openStories(1)">
+                    <i class="fas fa-user-astronaut default-friendly"></i>
+                </div>
+                <!-- Lista de amigos, para colocar em php
+                <div class="friends-box" onclick="openStories(0000)">
+                    <div class="imagem-friend" style="background:url('imagens/') no-repeat center center; background-size:cover;"></div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="central page">
+            <div class="box-stories">
+                <div class="celular">
+                    <div class="line-top"></div>
+                    <div class="conteudo-storie">
+                        <!-- aqui carregam os stories -->
+                        <div class="qtd-storie">
+                            <div class="storie-line this-position" onclick="changeStorie(0)"></div>
+                        </div>
+                        <div class="imagens-storie">
+                            <div class="imagem-storie this-image" style="background:url('imagens/upload/bg.png') no-repeat center center; background-size:cover;">
+                                <h2 class="descricao">Teste de Descrição</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="left button"><i class="fas fa-angle-double-left"></i></div>
+                        <div class="ok button"></div>
+                        <div class="right button"><i class="fas fa-angle-double-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="createStorie page">
+            <div class="box-stories">
+                <div class="celular">
+                    <div class="line-top"></div>
+                    <div class="conteudo-storie">
+                        <div class="imagens-storie to-image-up">
+                            <div class="imagem-storie this-image view-upload" style="background:url('imagens/upload/bg.png') no-repeat center center; background-size:cover;">
+                            </div>
+                        </div>
+                        <textarea class="descricao-area" maxlength="100" placeholder="Insira a Descrição"></textarea>
+                        
+                        <!-- Botão de upload -->
+                        <div class="upload-image">
+                            <input type="file" id="upload_imagem" style="display:none;" onchange="uploadImage(this.files[0])">
+                            <label for="upload_imagem"><i class="fas fa-upload"></i> Carregar Imagem</label>
+                        </div>
+                        
+                        <div class="options">
+                            <!-- Lado Esquerdo -->
+                            <div class="leftWay">
+                                <div class="act" onclick="newImage()"><div class="icon"><i class="fas fa-times"></i></div></div>
+                                
+                                <div class="forDrop">
+                                    <div class="icon" onclick="drop(0)"><i class="fas fa-search"></i></div>
+                                    <div class="drop-op right-op">
+                                        <div class="act" onclick="zoom(0)"><i class="fas fa-search-plus"></i></div>
+                                        <div class="act" onclick="zoom(1)"><i class="fas fa-search-minus"></i></div>
+                                        <div class="act" onclick="zoom(2)"><i class="fas fa-reply"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Lado direito -->
+                            <div class="rightWay">
+
+                                <div class="forDrop">
+                                    <div class="icon" onclick="drop(1)"><i class="fas fa-crop-alt"></i></div>
+                                    <div class="drop-op left-op">
+                                        <div class="act" onclick="backgroundSize(0)"><i class="fas fa-expand-arrows-alt"></i></div>
+                                        <div class="act" onclick="backgroundSize(1)"><i class="fas fa-expand"></i></div>
+                                        <div class="act" onclick="backgroundSize(2)"><i class="fas fa-compress-alt"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="forDrop">
+                                    <div class="icon" onclick="drop(1)"><i class="fas fa-crop-alt"></i></div>
+                                    <div class="drop-op left-op">
+                                        <div class="act" onclick="backgroundSize(0)"><i class="fas fa-expand-arrows-alt"></i></div>
+                                        <div class="act" onclick="backgroundSize(1)"><i class="fas fa-expand"></i></div>
+                                        <div class="act" onclick="backgroundSize(2)"><i class="fas fa-compress-alt"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="upload_button">Postar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="perfil page">
+            <h1>Página de Perfil</h1>
+        </div>
+    </div>
+</body>
+</html>

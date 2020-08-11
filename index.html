@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Stories</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/utilitarios.css">
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <div class="infinity-rotate hidden">
+        <i class="fas fa-sync-alt"></i>
+    </div>
+    <div class="login">
+        <div class="box">
+            <h1>Login</h1>
+            <span>Nome de Usuário</span>
+            <input type="text" placeholder="Insira seu Login" id="l_login">
+            <span>Senha</span>
+            <input type="password" placeholder="Insira sua senha" id="l_senha">
+            <hr>
+            <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+            <p>Não tem uma conta? <span class="change-to" onclick="change(0)">Registre-se</span></p>
+        </div>
+    </div>
+    <div class="registro">
+        <div class="box">
+            <h1>Registro</h1>
+            <span>Nome de Usuário</span>
+            <input type="text" placeholder="Insira seu Login" id="r_login">
+            <span>Senha</span>
+            <input type="password" placeholder="Insira sua senha" id="r_senha">
+            <span>Repita sua senha</span>
+            <input type="password" placeholder="Insira sua senha" id="re_senha">
+            <span>Email</span>
+            <input type="email" placeholder="Insira seu email" id="r_email">
+            <hr>
+            <button onclick="registro()"><i class="fas fa-sign-in-alt"></i> Efetuar Registro</button>
+            <p>Já tem uma conta? <span class="change-to" onclick="change(1)">Faça Login</span></p>
+        </div>
+    </div>
+</body>
+</html>

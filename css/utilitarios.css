@@ -1,0 +1,48 @@
+.active {
+    top:0px;
+}
+.hidden {
+    display:none;
+}
+
+
+/* Carregamento */
+.infinity-rotate {
+    position:absolute;
+    top:50%;
+    left:50%;
+    z-index:1000;
+}
+.infinity-rotate i {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:50pt;
+    color:yellow;
+    animation: rotate-infinity 1s linear infinite;
+}
+@keyframes rotate-infinity {
+    from {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+
+
+
+/* scroll bar */
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #be3333;
+}
+::-webkit-scrollbar-thumb {
+    background: #be3333;
+}
